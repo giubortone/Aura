@@ -20,7 +20,7 @@ import React from 'react'
 
             <div className='bg-violet-900 text-center font-bold text-white p-2 mb-24'>Psicólogos a tu alcance con un click</div>
             <div className='flex justify-evenly mt-8'>
-                <div >
+                <div>
                     <div className='flex justify-center items-center'> 
                         <img className='' src='src\assets\Counter.png' alt='img2' />
                         <h2 className='font-bold text-2xl ml-6'>Registrate <br/> Gratis</h2>
@@ -47,7 +47,7 @@ import React from 'react'
             
             <div className='mt-24'>
                 <img className="absolute z-0 opacity-80" src="src\assets\SOMOS SIGNATARIOS DE LA O,,,NU 1.png" alt="img-3" />
-                <div className='relative z-5 flex justify-end grid mr-24' >
+                <div className=' relative z-5 flex justify-end grid mr-24' >
                     <h1 className='font-bold text-5xl mt-24' >  Eres psicologo? <br /></h1>  
                     <p className='mt-7 text-xl mb-8'>Tendrás un espacio en el cual personas que <br /> requieren de tus servicios podrán agendar citas <br /> contigo según tu agenda de disponibilidad. </p>
                     <p className='mb-10'> Con Aura tendrá acceco a:</p>
@@ -59,8 +59,72 @@ import React from 'react'
                     </div>
                 </div>
             </div>
-            <div className=' mt-62 relative z-10 bg-violet-900 text-center font-bold text-white p-2 relative z-10'>Psicólokkgos a tu alcance con un click</div>
-            <div className='bg-violet-900'> jj</div>
+            <div className='mt-64 relative z-0 bg-violet-900 p-4'></div>
+
+            <div className='flex justify-between items-center bg-gray-100'>
+                <div className='flex justify-start grid ml-24'>
+                    <h1 className='font-bold text-4xl' > Conoce a nuestros profesionales <br /></h1>  
+                    <p className='mt-7 text-xl mb-8'>Tendrás un espacio en el cual personas que <br /> requieren de tus servicios podrán agendar citas <br /> contigo según tu agenda de disponibilidad. </p>
+                    <p className='mb-10'> Con Aura puedes buscar a los mejores psicologos:</p>
+                </div>
+                
+                <img className='mt-0' src="src\assets\Grey Untangled Thoughts Mental Health Clinic Logo 1.png" alt="img4" />
+            </div>
+
+            <div className='bg-violet-900 h-24 flex justify-evenly items-center' >
+                <div>
+                    <div className='flex justify-center items-center space-x-40'>
+                        <div>
+                            <h1 className='font-bold text-4xl text-white'> 24/7</h1>
+                            <p className='text-white'> Soporte online</p>
+                        </div>
+                        <img src="src\assets\Vector 8.png" alt="" />
+                       
+                    </div>
+                </div>
+
+                <div>
+                    <div className='flex justify-center items-center space-x-40'>
+                        <div>
+                            <h1 className='font-bold text-4xl text-white'>100+</h1>
+                            <p className='text-white'>Doctores</p>
+                        </div>
+                        <img src="src\assets\Vector 8.png" alt="" />
+                        </div>
+
+                 
+                </div>
+
+                <div className='text-center'>
+                    <h1 className='font-bold text-4xl text-white'>1000+</h1>
+                    <p className='text-white'>Pacientes</p>
+                      
+                        
+                       
+
+                 
+                </div>
+
+
+
+                
+            
+                
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        
+           
         </React.Fragment>
     )
 }
