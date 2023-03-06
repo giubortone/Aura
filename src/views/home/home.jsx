@@ -1,5 +1,4 @@
 import React from 'react'
-
  export default function Home() {
     return(
         <React.Fragment>
@@ -98,24 +97,22 @@ import React from 'react'
                 <div className='text-center'>
                     <h1 className='font-bold text-4xl text-white'>1000+</h1>
                     <p className='text-white'>Pacientes</p>
-                      
-                        
-                       
-
-                 
                 </div>
-
-
-
-                
-            
-                
-
-
-
-
-
             </div>
+
+            <img className='absolute z-0' src="src\assets\Imagen de fondo.png" alt="" />
+            <div className=' relative z-10 bg-amber-300 h-32 rounded-3xl mt-48 mb-40 mr-20 ml-20 text-white'>
+                <h1 className='font-bold text-4xl ml-3.5 py-4'>¿Estás listo para tu primera terapia?</h1>
+                <p className='ml-5'>Habla hoy de forma segura y privada con un psicólogo online.</p>
+            </div>
+            
+
+            <div className='bg-violet-900 text-white font-bold text-3xl h-20'>
+                <h1 className='px-11 py-4'>Lo que opinan nuestros pacientes</h1>
+            </div>
+
+
+
 
 
 
