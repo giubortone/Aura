@@ -6,7 +6,7 @@ const Footer = () => {
     return <footer
     class="text-center text-neutral-600 dark:text-purple-900 lg:text-left">
     <div
-      class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
+      class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between bg-violet-100">
       <div class="mr-12 hidden lg:block">
         <span>Contactanos en nuestras redes sociales:</span>
       </div>
@@ -130,12 +130,12 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    <div class=" p-6 text-center">
+    <div class=" p-6 text-center bg-violet-100">
       <span>© 2023 Copyright:</span>
       <a
         class="font-semibold text-purple-900 dark:text-purple-900"
-        href="https://tailwind-elements.com/"
-        >Aura</a
+        href="http://localhost:5173/"
+        > Aura</a
       >
     </div>
   </footer>
