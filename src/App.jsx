@@ -8,6 +8,7 @@ import Loginoption from './views/loginoption/loginoption'
 import Payment from './views/payment/payment'
 import Register from './views/register/register'
 import Registerdr from './views/registerdr/registerdr'
+import Login from './views/login/login'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='p' element={<Payment/>} />
         <Route path='r' element={<Register/>} />
         <Route path='d' element={<Registerdr/>} />
+        <Route path='l' element={<Login/>} />
       </Routes>
       <div className="App">
         <Footer />
