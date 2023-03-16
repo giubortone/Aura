@@ -7,6 +7,7 @@ import Home from './views/home/home'
 import Loginoption from './views/loginoption/loginoption'
 import Payment from './views/payment/payment'
 import Register from './views/register/register'
+import Registerdr from './views/registerdr/registerdr'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='h' element={<Loginoption/>} />
         <Route path='p' element={<Payment/>} />
         <Route path='r' element={<Register/>} />
+        <Route path='d' element={<Registerdr/>} />
       </Routes>
       <div className="App">
         <Footer />
