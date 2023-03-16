@@ -101,9 +101,15 @@ import React from 'react'
                                         <button className='bg-purple-900 rounded-full p-2 px-20 text-white ml-11 flex justify-center'>
                                             Confirmar
                                         </button>
+                                        <br></br>
                                     </div>
 
                                    </form>
+                                   <a href='.\register'>
+                                        <button className='bg-violet-500 rounded-full p-2 px-20 text-white ml-11 flex justify-center'>
+                                            Registrarse
+                                        </button>
+                                    </a>
                                </div>
                            </div>
                         </div>
