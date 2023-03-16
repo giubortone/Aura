@@ -9,10 +9,14 @@ import React from 'react'
                    <h1 className='text-3xl mb-4 font-bold'>Descubre psicologos en linea</h1> 
                    <h2 className='text-xl'>Tu salud mental es lo más importante, una <br/> mente sana hace un cuerpo sano</h2> <br/>
                     <div className="">
-                        <button  className='bg-purple-900 rounded-lg p-2 px-4  text-white mr-4'>Saber mas</button>
-
+                        <a href="#section-1">
+                            <button className='bg-purple-900 rounded-lg p-2 px-4  text-white mr-4' >
+                            Saber más
+                            </button>
+                        </a>
+                        <a href=".\login">
                         <button   className='bg-purple-900 rounded-lg p-2 px-4 text-white ml-4'>Pedir cita</button>
-                    
+                        </a>
                     </div>
                 </div>
 
@@ -46,7 +50,7 @@ import React from 'react'
                 </div>
             </div>
             
-            <div className='mt-24'>
+            <div className='mt-24' id='section-1'>
                 <img className="absolute z-0 opacity-80" src="src\assets\SOMOS SIGNATARIOS DE LA O,,,NU 1.png" alt="img-3" />
                 <div className=' relative z-5 flex justify-end grid mr-24' >
                     <h1 className='font-bold text-5xl mt-24' >  Eres psicologo? <br /></h1>  
