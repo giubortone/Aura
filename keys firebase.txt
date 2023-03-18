@@ -1,0 +1,12 @@
+Nombre del proyecto
+Aura
+ID del proyecto
+aura-9357d
+Número de proyecto
+819196767588
+Ubicación predeterminada de los recursos de GCP
+Aún sin seleccionar
+Organización o carpeta superior en GCP
+unimet.edu.ve
+Clave de API web
+AIzaSyA3MUF2_etswvADzh7oZJwKdWko0JzDNzQ
