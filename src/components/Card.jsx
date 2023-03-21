@@ -1,16 +1,16 @@
 import React from 'react'
 
-export default function Card(testimonials) {
+export default function Card({data}) {
   return (
-    <div>
-      <div className='flex justify-evenly items-center'>
-                <div className='border-2 rounded-lg w-96 border-black px-2 y'>
+    <React.Fragment>
+      <div className='w-1/3'>
+                <div className='border-2 rounded-lg w-full h-full border-black px-2 y '>
                     <div className='flex justify-center'>
                         <div className='flex justify-center'>
                              <img src="src\assets\Ellipse 13.png" alt="img7" />
                              <div className='px-8'>
-                                <h1>{testimonials.name}</h1>
-                                <p>{testimonials.date}</p>
+                                <h1>{data.name}</h1>
+                                <p>{data.date}</p>
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -22,10 +22,11 @@ export default function Card(testimonials) {
                         </div>
                     </div>
 
-                    <p className='mt-4'>{testimonials.review}</p>
+                    <p className='mt-4'>{data.review}</p>
 
                 </div>
             </div>
-    </div>
+    </React.Fragment>
+
   )
 }
