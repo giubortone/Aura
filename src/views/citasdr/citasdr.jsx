@@ -5,7 +5,6 @@ import React from 'react'
         <React.Fragment>
         <div className='bg-violet-100 py-2'></div>
         <h1 className='ml-8'>Citas agendadas</h1>
-
         <div className='bg-violet-100 py-2'></div>
         <br></br>
 
