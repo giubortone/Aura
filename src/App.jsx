@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Footer from "./Footer";
+import Footer from "./Components/Footer";
 import Home from './views/home/home'
 import Loginoption from './views/loginoption/loginoption'
 import Payment from './views/payment/payment'
@@ -31,5 +31,3 @@ function App() {
 
 export default App
 
-
-//export default App

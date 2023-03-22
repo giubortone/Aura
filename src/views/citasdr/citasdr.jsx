@@ -1,10 +1,11 @@
 import React from 'react'
 
- export default function Citas() {
+ export default function Citasdr() {
     return(
         <React.Fragment>
         <div className='bg-violet-100 py-2'></div>
         <h1 className='ml-8'>Citas agendadas</h1>
+
         <div className='bg-violet-100 py-2'></div>
         <br></br>
 
@@ -13,7 +14,7 @@ import React from 'react'
                 <thead class="text-xs text-gray-700 uppercase bg-violet-200 dark:bg-violet-200 dark:text-purple-900">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Doctor
+                            Paciente
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Fecha
@@ -29,13 +30,13 @@ import React from 'react'
                 <tbody>
                     <tr class="bg-purple-100 border-b dark:bg-gray-100 dark:border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-200">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            Daniel Alvarado
+                            Leonardo Padrón
                         </th>
                         <td class="px-6 py-4">
-                            19/03/2023
+                            21/03/2023
                         </td>
                         <td class="px-6 py-4">
-                            15:00
+                            12:00
                         </td>
             
                         <td class="px-6 py-4 text-right">
@@ -45,13 +46,13 @@ import React from 'react'
 
                     <tr class="bg-purple-100 border-b dark:bg-gray-100 dark:border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-200">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            Alexandre Camara
+                            Alejandro Abrodos
                         </th>
                         <td class="px-6 py-4">
-                            15/07/2023
+                            21/01/2024
                         </td>
                         <td class="px-6 py-4">
-                            9:00
+                            11:00
                         </td>
                        
                         <td class="px-6 py-4 text-right">

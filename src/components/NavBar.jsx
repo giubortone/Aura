@@ -1,51 +1,35 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from "react-router-dom";
+//NavBar
 
 function NavBarr() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container fluid>
-        <Navbar.Brand href='./'>AURA</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="./login">Inicio de Sesión</Nav.Link>
-            <Nav.Link href="./register">Registro</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    
+    <nav class="p-3 text-violet-900 ">
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <h6
+          class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+          <img className='' src="src\assets\Luxi-Hosting-Logo.png" alt='logo'/>
+          Aura
+        </h6>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+          <ul class="flex flex-col mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+            <li>
+              <a href="./" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="./search" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Doctores</a>
+            </li>
+            <li>
+              <a href="./register" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Registrarse</a>
+            </li>
+            <li>
+              <a href="./login" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Iniciar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
   );
 }
 
