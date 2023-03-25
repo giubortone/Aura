@@ -55,19 +55,16 @@ const Footer = () => {
           </h6>
         </div>
         <div class="">
-          <h6
-            class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+          <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
             Nosotros
           </h6>
-          <p class="mb-4">
+          <p class="mb-4 flex items-center justify-center md:justify-start">
             <a href="#!" class="text-neutral-600 dark:text-purple-900"
-              >Nosotros</a
-            >
+              >Nosotros</a>
           </p>
-          <p class="mb-4">
+          <p class="mb-4 flex items-center justify-center md:justify-start">
             <a href="#!" class="text-neutral-600 dark:text-purple-900"
-              >Preguntas frecuentes</a
-            >
+              >Preguntas frecuentes</a>
           </p>
         </div>
         <div>
