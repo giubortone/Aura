@@ -7,6 +7,9 @@ import Loginoption from "../views/loginoption/loginoption";
 import Payment from "../views/payment/payment";
 import Register from "../views/register/register";
 import Registerdr from "../views/registerdr/registerdr";
+import Citas from "../views/citas/citas";
+import Citasdr from "../views/citasdr/citasdr";
+import Search from "../views/search/search";
 
 export const router = createBrowserRouter([
     {
@@ -32,5 +35,17 @@ export const router = createBrowserRouter([
     {
         path:"/login",
         element:<Login/>
+    },
+    {
+        path:"/citas",
+        element:<Citas/>
+    },
+    {
+        path:"/citasdr",
+        element:<Citasdr/>
+    },
+    {
+        path:"/search",
+        element:<Search/>
     }
 ])

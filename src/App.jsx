@@ -1,17 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Footer from "./Footer";
-import Home from "./views/home/home";
-import Loginoption from "./views/loginoption/loginoption";
-import Payment from "./views/payment/payment";
-import Register from "./views/register/register";
-import Registerdr from "./views/registerdr/registerdr";
-import Login from "./views/login/login";
-import ChatRoom from "./views/ChatRoom/ChatRoom";
-import { PrivateRoute } from "./routes/PrivateRoute";
-
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Footer from "./Components/Footer";
+import Home from './views/home/home'
+import Loginoption from './views/loginoption/loginoption'
+import Payment from './views/payment/payment'
+import Register from './views/register/register'
+import Registerdr from './views/registerdr/registerdr'
+import Login from './views/login/login'
+import ChatRoom from './views/ChatRoom/ChatRoom';
 function App() {
   return (
     <div>
@@ -40,4 +38,3 @@ function App() {
 
 export default App;
 
-//export default App

@@ -5,7 +5,7 @@ import App from './App'
 import './index.css'
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/RouterProvider";
-import Footer from './Footer'
+import Footer from './Components/Footer'
 import NavBarr from './components/NavBar'
 import "bootstrap/dist/css/bootstrap.min.css";
 
