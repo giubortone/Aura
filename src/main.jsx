@@ -8,6 +8,7 @@ import { router } from "./routes/RouterProvider";
 import Footer from './Components/Footer'
 import NavBarr from './components/NavBar'
 import "bootstrap/dist/css/bootstrap.min.css";
+ 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

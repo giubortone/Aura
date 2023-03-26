@@ -7,8 +7,11 @@ function NavBarr() {
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <h6
           class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+          <a href="/">
           <img className='' src="src\assets\Luxi-Hosting-Logo.png" alt='logo'/>
+          </a>
           Aura
+          
         </h6>
         <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
           <ul class="flex flex-col mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">

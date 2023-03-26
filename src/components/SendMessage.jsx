@@ -3,7 +3,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export const SendMessage = () => {
   const[value,Setvalue] = useState("");
-  const {currentUser} = //deberia ir como conseguir al usuario aqui
+  const {currentUser} = ' ';//deberia ir como conseguir al usuario aqui
   
   const handleSendMessage = async (e) => {
     e.preventDefault();

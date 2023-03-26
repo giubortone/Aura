@@ -1,8 +1,6 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react'
 import { auth } from '../firebase';
-import AuthDetails from './AuthDetail';
-
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
@@ -114,7 +112,7 @@ const SignIn = () => {
                     <br></br>
                 </div>
             </form>
-            <AuthDetails/>
+            
         </div>
     )
 }
