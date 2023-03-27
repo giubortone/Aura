@@ -1,9 +1,10 @@
+import { Database } from "firebase/database";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 
 export const SendMessage = () => {
   const[value,Setvalue] = useState("");
-  //const {currentUser} = //deberia ir como conseguir al usuario aqui
+  const {currentUser} = AuthUser();
   
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -14,8 +15,8 @@ export const SendMessage = () => {
     }
 
     try{
-      const {uid, displayName, photoUrl} = //y ponerlo aqui
-      await addDoc(collection(db,"messages",{
+      const {uid, displayName, photoUrl} = currentUser;
+      await addDoc(collection(Database,"messages",{
         text: value,
         name: displayName,
         avatar: photoUrl,

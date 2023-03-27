@@ -21,7 +21,7 @@ function App() {
         <Route path="d" element={<Registerdr />} />
         <Route path="l" element={<Login />} />
         <Route
-          path="lchat"
+          path="/chat"
           element={
             <PrivateRoute>
               <ChatRoom />

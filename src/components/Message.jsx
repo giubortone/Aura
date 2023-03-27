@@ -1,5 +1,5 @@
 const Message = ({ message }) => {
-  const { currentUser } = //aqui de nuevo el usuario
+  const { currentUser } = UserAuth();
 
   console.log(message)
   return (
