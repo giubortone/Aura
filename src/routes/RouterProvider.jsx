@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
 
     {
         path: "/profiledr",
-        element: <Profiledr/>
+        element: <Doctorprofile/>
     },
 
     {
