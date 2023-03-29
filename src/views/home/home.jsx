@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/Card";
 import Register from "../register/register";
+import { NavLink } from 'react-router-dom'
 export default function Home() {
   const testimonials = [
     {
@@ -38,13 +39,11 @@ export default function Home() {
           </h2>{" "}
           <br />
           <div className="">
-            <button className="bg-purple-900 rounded-lg p-2 px-4  text-white mr-4">
-              Saber más
-            </button>
+            
+            <NavLink className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4" to={'/register'}>Saber mas</NavLink>
 
-            <button  action="../register/register" className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4">
-              Pedir cita
-            </button>
+
+            <NavLink className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4" to={'/register'}>Pedir cita </NavLink>
           </div>
         </div>
 
