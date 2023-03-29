@@ -10,6 +10,7 @@ import Registerdr from "../views/registerdr/registerdr";
 import Citas from "../views/citas/citas";
 import Citasdr from "../views/citasdr/citasdr";
 import Search from "../views/search/search";
+import ChatRoom from "../views/ChatRoom/ChatRoom";
 
 export const router = createBrowserRouter([
     {
@@ -47,5 +48,9 @@ export const router = createBrowserRouter([
     {
         path:"/search",
         element:<Search/>
+    },
+    {
+        path: "/chat",
+        element: <ChatRoom/>
     }
 ])

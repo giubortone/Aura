@@ -10,9 +10,10 @@ import Register from './views/register/register'
 import Registerdr from './views/registerdr/registerdr'
 import Login from './views/login/login'
 import ChatRoom from './views/ChatRoom/ChatRoom';
+import { AuthProvider } from './components/AuthDetail';
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="h" element={<Loginoption />} />
@@ -21,7 +22,7 @@ function App() {
         <Route path="d" element={<Registerdr />} />
         <Route path="l" element={<Login />} />
         <Route
-          path="lchat"
+          path="/chat"
           element={
             <PrivateRoute>
               <ChatRoom />
@@ -32,7 +33,7 @@ function App() {
       <div className="App">
         <Footer />
       </div>
-    </div>
+    </AuthProvider>
   );
 }
 
