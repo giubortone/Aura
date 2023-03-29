@@ -1,3 +1,4 @@
+import { Alert } from 'bootstrap';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react'
 import { auth } from '../firebase';
@@ -11,8 +12,10 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((credenciales)=>{
             console.log(credenciales);
+            alert("Bienvenido")
         }).catch((error)=>{
             console.log(error);
+            Alert("Alguno de los datos ingresados es inválido")
         })
     }
     return (
