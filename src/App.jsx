@@ -13,6 +13,8 @@ import ChatRoom from './views/ChatRoom/ChatRoom';
 import { AuthProvider } from './components/AuthDetail';
 import Doctorprofile from './views/DoctorProfile/doctorprofile';
 import Userprofile from './views/UserProfile/userprofile';
+import Feedback from './views/feedback/feedback';
+import Aboutus from './views/aboutus/aboutus';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
         <Route path="k" element={<Doctorprofile />} />
         <Route path="n" element={<Userprofile />} />
         <Route path="f" element={<Feedback />} />
+        <Route path="w" element={<Aboutus />} />
         
         <Route
           path="/chat"

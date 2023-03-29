@@ -11,6 +11,7 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((credenciales)=>{
             console.log(credenciales);
+            window.alert("Registrado con exito")
         }).catch((error)=>{
             console.log(error);
         })

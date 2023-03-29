@@ -59,7 +59,7 @@ const Footer = () => {
             Nosotros
           </h6>
           <p class="mb-4 flex items-center justify-center md:justify-start">
-            <a href="#!" class="text-neutral-600 dark:text-purple-900"
+            <a href="/aboutus" class="text-neutral-600 dark:text-purple-900"
               >Nosotros</a>
           </p>
         </div>
