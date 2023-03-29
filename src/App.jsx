@@ -25,6 +25,7 @@ function App() {
         <Route path="l" element={<Login />} />
         <Route path="k" element={<Doctorprofile />} />
         <Route path="n" element={<Userprofile />} />
+        <Route path="f" element={<Feedback />} />
         
         <Route
           path="/chat"
