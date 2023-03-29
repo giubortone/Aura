@@ -35,5 +35,5 @@ app.post("/payment", cors(), async (req, res) => {
 })
 
 app.listen(process.env.PORT || 4000, () => {
-	console.log("PORT 4000 ABIERTO")
+	console.log("El puerto 4000 esta abierto/listening")
 })

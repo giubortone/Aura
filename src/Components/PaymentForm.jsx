@@ -53,7 +53,7 @@ export default function PaymentForm() {
         </form>
         :
        <div>
-           <h2>Transacción exitosa</h2>
+           <h2 id="MensajeExito">¡Transacción exitosa!</h2>
        </div> 
         }
             
