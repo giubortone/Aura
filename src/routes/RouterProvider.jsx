@@ -12,6 +12,7 @@ import Citasdr from "../views/citasdr/citasdr";
 import Search from "../views/search/search";
 import ChatRoom from "../views/ChatRoom/ChatRoom";
 import Doctorprofile from "../views/DoctorProfile/doctorprofile";
+import Userprofile from "../views/UserProfile/userprofile";
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,11 @@ export const router = createBrowserRouter([
     {
         path: "/profiledr",
         element: <Doctorprofile/>
+    },
+
+    {
+        path: "/profileuser",
+        element: <Userprofile/>
     },
 
 
