@@ -71,5 +71,9 @@ export const router = createBrowserRouter([
     {
         path: "/userprofile",
         element: <Userprofile/>
+    },
+    {
+        path: "/feedback",
+        element: <Feedback/>
     }
 ])

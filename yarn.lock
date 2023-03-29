@@ -871,7 +871,6 @@
   integrity sha512-BJ9SxXux8zAg991UmT8slpwpsd31K1dHHbD3Ba4VzD+liLQ4WAMSxQp2d2ZPRPfN0jN2NPRowcSSoM7lCaF08Q==
 
 "@restart/hooks@^0.4.5", "@restart/hooks@^0.4.6", "@restart/hooks@^0.4.9":
-"@restart/hooks@^0.4.5", "@restart/hooks@^0.4.6", "@restart/hooks@^0.4.9":
   version "0.4.9"
   resolved "https://registry.npmjs.org/@restart/hooks/-/hooks-0.4.9.tgz"
   integrity sha512-3BekqcwB6Umeya+16XPooARn4qEPW6vNvwYnlofIYe6h9qG1/VeD7UvShCWx11eFz5ELYmwIEshz+MkPX3wjcQ==
@@ -911,13 +910,6 @@
   integrity sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==
   dependencies:
     tslib "^2.4.0"
-
-"@types/classnames@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.3.1.tgz#3c2467aa0f1a93f1f021e3b9bcf938bd5dfdc0dd"
-  integrity sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==
-  dependencies:
-    classnames "*"
 
 "@types/classnames@^2.3.1":
   version "2.3.1"
@@ -2070,6 +2062,11 @@ date-arithmetic@^4.0.1:
   resolved "https://registry.yarnpkg.com/date-arithmetic/-/date-arithmetic-4.1.0.tgz#e5d6434e9deb71f79760a37b729e4a515e730ddf"
   integrity sha512-QWxYLR5P/6GStZcdem+V1xoto6DMadYWpMXU82ES3/RfR3Wdwr3D0+be7mgOJ+Ov0G9D5Dmb9T17sNLQYj9XOg==
 
+datepicker@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/datepicker/-/datepicker-0.0.0.tgz#9c2001fbcb1938abc180d42fc082b62d3a061369"
+  integrity sha512-fLU1tFECIBtQOWOyPVtDZU7y9Cha89ay8WfoZRVhiifPW5AHvxfLQHWnwwxtUi2TVYYI5GrpfI1C2P5Ei0bDdw==
+
 debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -3076,6 +3073,18 @@ mime-types@^2.1.12:
   dependencies:
     mime-db "1.52.0"
 
+mini-svg-data-uri@^1.4.3:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
+
+minimatch@^3.0.4, minimatch@^3.1.1:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
+  integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
+  dependencies:
+    brace-expansion "^1.1.7"
+
 minimist@^1.2.6:
   version "1.2.8"
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
@@ -3383,7 +3392,6 @@ prompts@^2.3.2:
     sisteransi "^1.0.5"
 
 prop-types-extra@^1.1.0, prop-types-extra@^1.1.1:
-prop-types-extra@^1.1.0, prop-types-extra@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/prop-types-extra/-/prop-types-extra-1.1.1.tgz"
   integrity sha512-59+AHNnHYCdiC+vMwY52WmvP5dM3QLeoumYuEyceQDi9aEhtwN9zIQ2ZNo25sMyXnbh32h+P1ezDsUpUH3JAew==
@@ -3526,22 +3534,6 @@ react-transition-group@^4.4.2:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
-
-react-widgets@^5.8.4:
-  version "5.8.4"
-  resolved "https://registry.yarnpkg.com/react-widgets/-/react-widgets-5.8.4.tgz#1c57c93cef7fabb88cd48c92a2a418f56553620d"
-  integrity sha512-WcA/K+eVKAW+vyeQKdRqo2gmnLqHbNSDDKQ84j/wyhbautCRrGbjWAmKb4+tI3OzUgCAAEJDZ75azAY2WoKWYQ==
-  dependencies:
-    "@restart/hooks" "^0.4.5"
-    "@types/classnames" "^2.3.1"
-    "@types/react-transition-group" "^4.4.4"
-    classnames "^2.3.1"
-    date-arithmetic "^4.0.1"
-    dom-helpers "^5.2.1"
-    prop-types-extra "^1.1.1"
-    react-transition-group "^4.4.2"
-    tiny-warning "^1.0.3"
-    uncontrollable "^7.2.1"
 
 react-widgets@^5.8.4:
   version "5.8.4"
