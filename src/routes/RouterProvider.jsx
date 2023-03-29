@@ -56,5 +56,20 @@ export const router = createBrowserRouter([
     {
         path: "/chat",
         element: <ChatRoom/>
+    },
+
+    {
+        path: "/calendar",
+        element: <Calendar/>
+    },
+
+    {
+        path: "/profiledr",
+        element: <Profiledr/>
+    },
+
+    {
+        path: "/userprofile",
+        element: <Userprofile/>
     }
 ])
