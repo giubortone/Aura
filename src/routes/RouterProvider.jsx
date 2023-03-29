@@ -15,6 +15,7 @@ import Doctorprofile from "../views/DoctorProfile/doctorprofile";
 import Userprofile from "../views/UserProfile/userprofile";
 import Feedback from "../views/feedback/feedback";
 import Calendar from "../views/calendar/calendar";
+import Aboutus from "../views/aboutus/aboutus";
 
 export const router = createBrowserRouter([
     {
@@ -75,5 +76,11 @@ export const router = createBrowserRouter([
     {
         path: "/feedback",
         element: <Feedback/>
+    },
+
+    {
+        path: "/aboutus",
+        element: <Aboutus/>
     }
 ])
+
