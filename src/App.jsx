@@ -11,6 +11,7 @@ import Registerdr from './views/registerdr/registerdr'
 import Login from './views/login/login'
 import ChatRoom from './views/ChatRoom/ChatRoom';
 import Doctorprofile from './views/DoctorProfile/doctorprofile';
+import Userprofile from './views/UserProfile/userprofile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="d" element={<Registerdr />} />
         <Route path="l" element={<Login />} />
         <Route path="k" element={<Doctorprofile />} />
+        <Route path="n" element={<Userprofile />} />
         
         <Route
           path="/chat"
