@@ -45,9 +45,10 @@ const SignUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((credenciales) => {
                 console.log(credenciales);
-
                 writeUserData(credenciales.user.uid, name, email);
+                alert("Registrado con exito")
             }).catch((error) => {
+                alert(error)
                 console.log(error);
             })
     }
