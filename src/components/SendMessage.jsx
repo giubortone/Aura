@@ -2,7 +2,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "./AuthDetail";
-
+import {useState} from "react"
 
 export const SendMessage = () => {
   const[value,Setvalue] = useState("");
@@ -18,17 +18,16 @@ export const SendMessage = () => {
 
     try{
       const {uid, displayName, photoUrl} = currentUser;
-      await addDoc(collection(db,"messages",{
+      await addDoc(collection(db,"messages"),{
         text: value,
         name: displayName,
         avatar: photoUrl,
         createdAT: serverTimestamp(),
         uid 
-      }))
+      })
     } catch(error){
       console.log(error);
     }
-    console.log(value);
     setValue("");
   }
 
