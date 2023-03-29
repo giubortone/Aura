@@ -1,7 +1,7 @@
 import Message from "./Message"
 import {collection, query, where, onSnapshot, QuerySnapshot, orderBy} from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
-import { Database } from "firebase/database";
+
 
 
 export const ChatBox = () => {
@@ -16,7 +16,7 @@ export const ChatBox = () => {
 
   useEffect(() => {
     const q = query(
-      collection(Database, "messages"),
+      collection(db, "messages"),
       orderBy("createdAT"),
     );
     const userSignOut = onSnapshot(q,(QuerySnapshot) => {
@@ -27,7 +27,7 @@ export const ChatBox = () => {
       setMassages(messages)
     });
 
-    return userSignOut;
+    return () => userSignOut;
 
 
   }, []);

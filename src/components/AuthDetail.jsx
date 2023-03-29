@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 
 const AuthDetails = () => {
@@ -40,5 +40,37 @@ const AuthDetails = () => {
     </div>
   );
 };
+
+
+
+
+const AuthContext = createContext();
+
+
+
+export const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+
+  const value = {
+    currentUser,
+    setCurrentUser
+  }
+
+  use
+
+
+  return(
+    <AuthDetails.Provider value ={value}>
+      {children}
+    </AuthDetails.Provider>
+  )
+
+}
+
+export const UserAuth = () => {
+  return useContext(AuthContext);
+}
+
 
 export default AuthDetails;

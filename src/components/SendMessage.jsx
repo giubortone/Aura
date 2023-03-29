@@ -1,10 +1,12 @@
-import { Database } from "firebase/database";
+
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
+import { UserAuth } from "./AuthDetail";
 
 
 export const SendMessage = () => {
   const[value,Setvalue] = useState("");
-  const {currentUser} = AuthUser();
+  const {currentUser} = UserAuth();
   
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export const SendMessage = () => {
 
     try{
       const {uid, displayName, photoUrl} = currentUser;
-      await addDoc(collection(Database,"messages",{
+      await addDoc(collection(db,"messages",{
         text: value,
         name: displayName,
         avatar: photoUrl,
