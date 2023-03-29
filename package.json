@@ -4,19 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node ./server/pagos.jsx", 
+    "start": "node ./server/pagos.jsx",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.0",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
+    "date-fns": "^2.29.3",
     "datepicker": "^0.0.0",
     "firebase": "^9.18.0",
     "flowbite": "^1.6.4",
+    "heroicons": "^2.0.16",
     "license": "^1.0.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
