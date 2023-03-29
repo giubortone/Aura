@@ -129,7 +129,7 @@ import React from 'react'
                     <h1 className='text-3xl mb-4 font-bold text-purple-900'>“Tú eres aquello que haces, no aquello que dices que harás”</h1>
                     <h3 className='text-xl mb-4 font-bold text-gray-600'>~C.G. Jung</h3>
                     <br></br>
-                    <img className='rounded-lg ml-32' src='src\assets\registerdr.png' alt='foto registro'/>
+                    <img className='rounded-lg ml-32' src="assets\registerdr.png" alt='foto registro'/>
                     <br></br>
                 </dev>
             </dev>

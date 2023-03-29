@@ -30,7 +30,7 @@ import SignIn from '../../components/SignIn'
                     <h1 className='text-3xl mb-4 font-bold text-purple-900'>“El anhelo de cuidarnos constituye la mitad de nuestra salud”</h1>
                     <h3 className='text-xl mb-4 font-bold text-gray-600'>~Séneca</h3>
                     <br></br>
-                    <img className='rounded-lg ' src='src\assets\loginimg.png' alt='foto registro'/>
+                    <img className='rounded-lg ' src="assets\loginimg.png" alt='foto registro'/>
                     <br></br>
                 </dev>
             </dev>
