@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getDatabase, ref, get, child, query, limitToLast, orderByKey, equalTo, orderByChild } from "firebase/database";
 import Dropdown from 'react-bootstrap/Dropdown';
-import Combobox from "react-widgets/Combobox";
+import Combobox from 'react-widgets/Combobox';
 import "react-widgets/styles.css";
 
 
