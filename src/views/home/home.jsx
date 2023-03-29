@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Card";
+import Register from "../register/register";
 export default function Home() {
   const testimonials = [
     {
@@ -41,7 +42,7 @@ export default function Home() {
               Saber más
             </button>
 
-            <button className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4">
+            <button  action="../register/register" className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4">
               Pedir cita
             </button>
           </div>
