@@ -44,11 +44,12 @@ export default function PaymentForm() {
         {!success ? 
         <form onSubmit={handleSubmit}>
             <fieldset>
-                <div >
-                    <CardElement/>
+                <div>
+                    <CardElement className="border"/>
                 </div>
             </fieldset>
-            <button>Pagar</button>
+            <br></br>
+            <button className='bg-purple-900 rounded-full p-2 px-4  text-white mr-4'>Pagar</button>
         </form>
         :
        <div>
