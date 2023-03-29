@@ -1,7 +1,7 @@
 import Message from "./Message"
-import {collection, query, where, onSnapshot, QuerySnapshot, orderBy} from "firebase/firestore";
+import {collection, query, onSnapshot, QuerySnapshot, orderBy} from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
-
+import { db } from "../firebase";
 
 
 export const ChatBox = () => {
@@ -24,7 +24,7 @@ export const ChatBox = () => {
       QuerySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id});
       });
-      setMassages(messages)
+      setMassages(messages);
     });
 
     return () => userSignOut;
@@ -35,12 +35,12 @@ export const ChatBox = () => {
 
   return (
     <div className="pb-44 pt-20 containerWrap">
-       {messages.map(message => (
+      {messages.map((message) => (
         <Message key={message.id} message={message} />
-       ))}
-      <div>ref={messagesEndRef}</div>
+      ))}
+      <div ref={messagesEndRef}></div>
     </div>
-  )
-}
+  );
+};
 
 export default ChatBox
