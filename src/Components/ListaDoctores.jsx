@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { getDatabase, ref, get, child, query, limitToLast, orderByKey, equalTo, orderByChild } from "firebase/database";
 import Combobox from 'react-widgets/Combobox';
+import { Link } from "react-router-dom";
 import "react-widgets/styles.css";
 
 
@@ -9,7 +10,6 @@ const Lista = () => {
 
     const [data, setData] = useState([]);
     const [nombreDoctor, setNombreDoctor] = useState('');
-    const [especialidad, setEspecialidad] = useState('');
     const [dataFiltrada, setDataFiltrada] = useState([]);
     const [filtroEspecialidad, setFiltroEspecialidad] = useState('');
     const [especialidades, setEspecialidades] = useState([]);
@@ -23,7 +23,6 @@ const Lista = () => {
                     let keyName = doctoresSnapshot.key;
                     let doctores = doctoresSnapshot.val();
                     records.push({ "key": keyName, "data": doctores });
-
                 });
                 setData(records);
                 setDataFiltrada(records);
@@ -128,6 +127,9 @@ const Lista = () => {
                             <th scope="col" class="px-6 py-3">
                                 Disponibilidad actual
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                Agendar cita
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -146,14 +148,22 @@ const Lista = () => {
                                 </td>
 
                                 {doctorSnapshot.data.disponible ?
-                                    <td class="px-6 py-4">
+                                    <><td class="px-6 py-4">
                                         <svg class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                    </td> : <td class="px-6 py-4">
-                                        <svg class="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    </td><td class="px-6 py-4">
+                                            <Link to="/calendar" state={{doctorSnapshot}}>Agendar cita</Link>
+                                        </td></>
+                                    : <><td class="px-6 py-4">
+                                        <svg class="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" alignmentBaseline='central'>
                                             <path stroke="none" d="M0 0h24v24H0z" />  <circle cx="12" cy="12" r="9" />  <path d="M10 10l4 4m0 -4l-4 4" /></svg>
-                                    </td>}
+
+                                    </td><td class="px-6 py-4">
+                                            <Link to="/calendar" hidden="true" state={doctorSnapshot}>Agendar cita</Link>
+                                        </td></>}
+
+
                             </tr>
                         )) : <p>Cargando</p>}
                     </tbody>

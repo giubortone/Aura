@@ -61,7 +61,7 @@ const SignUp = () => {
                 username: name,
                 email: email,
                 especialidad: especialidad,
-                disponible: false,
+                disponible: true,
                 edad: edad
             });
         }
