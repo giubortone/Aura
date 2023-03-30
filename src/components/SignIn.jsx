@@ -1,36 +1,43 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, {useState} from 'react'
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import React, { useState } from 'react'
 import { auth } from '../firebase';
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const signIn = (e) =>{
+    const [user, setUser] = useState({});
+
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        console.log(user);
+    });
+
+    const signIn = (e) => {
         console.log(email + ' and ' + password)
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
-        .then((credenciales)=>{
-            console.log(credenciales);
-            window.alert("Registrado con exito")
-        }).catch((error)=>{
-            console.log(error);
-        })
+            .then((credenciales) => {
+                console.log(credenciales);
+                window.alert("Registrado con exito")
+            }).catch((error) => {
+                console.log(error);
+            })
     }
     return (
         <div className='singn-in-container'>
             <form className="space-y-4 md:space-y-6" action="#" onSubmit={signIn}>
 
                 <div className="relative z-0 w-full mb-6 group">
-                    <input 
-                    type="email"
-                     name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="Email" 
-                     value={email} onChange={(e)=> setEmail(e.target.value)} required />
+                    <input
+                        type="email"
+                        name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="Email"
+                        value={email} onChange={(e) => setEmail(e.target.value)} required />
                     <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-purple-900 dark:text-purple-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-900 peer-focus:dark:text-purple-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
                 </div>
 
                 <div className="relative z-0 w-full mb-6 group mr-4">
-                    <input type="password" name="floating_password" id="floating_password" className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="Contraseña" 
-                    value={password} onChange={(e)=> setPassword(e.target.value)} required />
+                    <input type="password" name="floating_password" id="floating_password" className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="Contraseña"
+                        value={password} onChange={(e) => setPassword(e.target.value)} required />
                     <label for="floating_password" className="peer-focus:font-medium absolute text-sm text-purple-900 dark:text-purple-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-900 peer-focus:dark:text-purple-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
                 </div>
 
@@ -111,9 +118,10 @@ const SignIn = () => {
                         Confirmar
                     </button>
                     <br></br>
+                    <p>{user.name}</p>
                 </div>
             </form>
-            
+
         </div>
     )
 }

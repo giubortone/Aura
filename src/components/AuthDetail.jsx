@@ -58,8 +58,6 @@ export const AuthProvider = ({ children }) => {
   }
 
   use
-
-
   return(
     <AuthDetails.Provider value ={value}>
       {children}
