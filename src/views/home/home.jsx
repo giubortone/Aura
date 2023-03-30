@@ -1,6 +1,13 @@
 import React from "react";
 import Card from "../../components/Card";
-import Register from "../register/register";
+import foto from '../../assets/photo-3.png';
+import osmedkitoutline from '../../assets/ios-medkit-outline.png'
+import ioshomeoutline from '../../assets/ios-home-outline.png'
+import somos from '../../assets/SOMOS SIGNATARIOS DE LA O,,,NU 1.png'
+import counter from '../../assets/Counter.png'
+import grey from '../../assets/Grey Untangled Thoughts Mental Health Clinic Logo 1.png'
+import vector from '../../assets/Vector 8.png'
+import fondo from '../../assets/Imagen de fondo.png'
 import { NavLink } from 'react-router-dom'
 export default function Home() {
   const testimonials = [
@@ -39,7 +46,7 @@ export default function Home() {
           </h2>{" "}
           <br />
           <div className="">
-            
+
             <NavLink className="bg-purple-900 rounded-lg p-2 px-4 text-white ml-4" to={'/register'}>Saber mas</NavLink>
 
 
@@ -48,7 +55,7 @@ export default function Home() {
         </div>
 
         <div>
-          <img className="" src=".firebase\Dist\Images\photo-3 1.png" alt="img1" />
+          <img className="" src={foto} alt="img1" />
         </div>
       </div>
 
@@ -58,7 +65,7 @@ export default function Home() {
       <div className="flex justify-evenly mt-8">
         <div>
           <div className="flex justify-center items-center">
-            <img className="" src="assets\Counter.png" alt="img2" />
+            <img className="" src={counter} alt="img2" />
             <h2 className="font-bold text-2xl ml-6 text-violet-900">
               Registrate <br /> Gratis
             </h2>
@@ -74,7 +81,7 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <img
               className=""
-              src="assets\ios-home-outline.png"
+              src={ioshomeoutline}
               alt="img2"
             />
             <h2 className="font-bold text-2xl ml-6 text-violet-900">
@@ -91,7 +98,7 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <img
               className=""
-              src="assets\os-medkit-outline.png"
+              src={osmedkitoutline}
               alt="img2"
             />
             <h2 className="font-bold text-2xl ml-6  text-violet-900 ">
@@ -110,7 +117,7 @@ export default function Home() {
       <div className="mt-24">
         <img
           className="absolute z-0 opacity-80"
-          src="assets\SOMOS SIGNATARIOS DE LA O,,,NU 1.png"
+          src={somos}
           alt="img-3"
         />
         <div className=" relative z-5 flex justify-end grid mr-24">
@@ -162,7 +169,7 @@ export default function Home() {
 
         <img
           className="mt-0"
-          src="assets\Grey Untangled Thoughts Mental Health Clinic Logo 1.png"
+          src={grey}
           alt="img4"
         />
       </div>
@@ -174,7 +181,7 @@ export default function Home() {
               <h1 className="font-bold text-4xl text-white"> 24/7</h1>
               <p className="text-white"> Soporte online</p>
             </div>
-            <img src="assets\Vector 8.png" alt="" />
+            <img src={vector}alt="" />
           </div>
         </div>
 
@@ -184,7 +191,7 @@ export default function Home() {
               <h1 className="font-bold text-4xl text-white">100+</h1>
               <p className="text-white">Doctores</p>
             </div>
-            <img src="assets\Vector 8.png" alt="" />
+            <img src={vector} alt="" />
           </div>
         </div>
 
@@ -196,7 +203,7 @@ export default function Home() {
 
       <img
         className="absolute z-0"
-        src="assets\Imagen de fondo.png"
+        src={fondo}
         alt=""
       />
       <div className=" relative z-10 bg-amber-300 h-32 rounded-3xl mt-48 mb-40 mr-20 ml-20 text-white">
