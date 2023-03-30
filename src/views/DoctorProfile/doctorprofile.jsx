@@ -1,5 +1,5 @@
 import React from 'react'
-import foto from '../../assets/doctor 1.png';
+import foto from '../../assets/doctor.png';
 
 export default function Doctorprofile() {
   return (

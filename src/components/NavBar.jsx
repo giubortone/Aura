@@ -24,7 +24,6 @@ const NavBarr = () => {
       console.log(err);
     })
   }
-  console.log(user)
   return (
 
     <nav class="p-3 text-violet-900 ">
@@ -58,9 +57,11 @@ const NavBarr = () => {
               </li>
               : null}
             {user ? <li>
-              <button onClick={signOut} className='bg-purple-900 rounded-full p-2 px-20 text-white ml-11 flex justify-center'>
-                Salir
-              </button>
+              <a href='/'>
+                <button onClick={signOut} className='bg-purple-900 rounded-full p-2 px-20 text-white ml-11 flex justify-center'>
+                  Salir
+                </button>
+              </a>
             </li> : null}
           </ul>
         </div>

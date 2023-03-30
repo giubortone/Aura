@@ -13,10 +13,8 @@ const SignIn = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((credenciales) => {
-                console.log(credenciales);
-                window.alert("Bienvenido")
+                window.alert("Bienvenido " + credenciales.user.email)
             }).catch((error) => {
-                console.log(error);
                 window.alert(error)
             })
     }
@@ -118,7 +116,7 @@ const SignIn = () => {
 
                 </div>
             </form>
-            
+
         </div>
     )
 }

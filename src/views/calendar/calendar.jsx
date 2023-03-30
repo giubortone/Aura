@@ -3,7 +3,10 @@ import React from 'react'
 import back from '../../assets/back.png'
 import next from '../../assets/001-next.png'
 import { Menu, Transition } from '@headlessui/react'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { auth } from '../../firebase';
+import { getDatabase, ref, set as setFirebase, get, query } from "firebase/database";
+
 
 import {
   add,
@@ -21,44 +24,29 @@ import {
   startOfToday,
 } from 'date-fns'
 import { Fragment, useState } from 'react'
-import foto from '../../assets/doctor 1.png';
-
-const meetings = [
-  {
-    id: 1,
-    name: 'Isabela Espinoza',
-    imageUrl:
-      {foto},
-    startDatetime: '2023-03-30T13:00',
-    endDatetime: '2023-03-30T14:30',
-  },
-  {
-    id: 2,
-    name: 'Daniel Mijares',
-    imageUrl: {foto},
-      startDatetime: '2023-03-30T11:00',
-      endDatetime: '2023-03-30T12:30',
-  },
-]
+import foto from '../../assets/doctor.png';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function Calendar() {
   const [doctor, setDoctor] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
   React.useEffect(() => {
     setDoctor(location.state.doctorSnapshot);
     console.log(doctor ? doctor.key : null);
     console.log("data", doctor ? doctor.data : null);
   }, [])
+  const user = auth.currentUser;
   const meetings = [
     {
       id: doctor ? doctor.key : null,
       name: doctor ? doctor.data.username : null,
       imageUrl:
-        'https://thumbs.dreamstime.com/b/mujer-avatar-con-la-cara-sonriente-personaje-de-dibujos-animados-femenino-chica-joven-feliz-icono-hermoso-gente-120322126.jpg',
+        { foto },
       startDatetime: '2023-03-30T13:00',
       endDatetime: '2023-03-30T14:30',
     },
@@ -80,8 +68,36 @@ export default function Calendar() {
   }
 
   function nextMonth() {
+    console.log('proximo mess')
     let firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
+  }
+
+  function agendar() {
+    const db = getDatabase();
+
+    get(query(ref(db, 'citas/' + user.uid + '_' + doctor.key + '_' + format(selectedDay, 'dd_MM_yyyy')))).then((snapshot) => {
+      if (snapshot.exists()) {
+        window.alert('Ya tienes un cita con este doctor este dia')
+      } else {
+        setFirebase(ref(db, 'citas/' + user.uid + '_' + doctor.key + '_' + format(selectedDay, 'dd_MM_yyyy')), {
+          fecha: format(selectedDay, 'dd/MM/yyyy'),
+          id_usuario: user.uid,
+          id_doctor: doctor.key
+        }).then(() => {
+          window.alert('Cita agendada correctamente')
+          navigate('/search')
+        }).catch((error) => {
+          window.alert('Ya tienes un cita con este doctor este dia')
+          console.log(error);
+        });
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+
+
   }
 
   let selectedDayMeetings = meetings.filter((meeting) =>
@@ -191,6 +207,7 @@ export default function Calendar() {
               </ol>
             </section>
           </div>
+
           <section className="mt-12 md:mt-0 md:pl-14">
             <h2 className="font-semibold text-gray-900">
               Agendar cita para {' '}
@@ -201,17 +218,27 @@ export default function Calendar() {
             <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
               {selectedDayMeetings.length > 0 ? (
                 selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} 
-                  /> 
-                  
+                  <Meeting meeting={meeting} key={meeting.id}
+                  />
+
                 ))
               ) : (
                 <p>No hay citas agendadas para hoy.</p>
               )}
             </ol>
           </section>
+
         </div>
       </div>
+      {user ?
+        <button
+          type="button"
+          onClick={agendar}
+          className="bg-purple-900 rounded-full p-2 px-20 text-white ml-11 flex justify-right">
+          <span className="sr-only">Aceptar</span>
+          Aceptar
+        </button>
+        : null}
     </div>
   )
 }
