@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
-
+import { useNavigate } from "react-router-dom";
 import { auth } from '../firebase';
 import { getDatabase, ref, set, get, query, orderByKey } from "firebase/database";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -13,6 +13,7 @@ import Combobox from 'react-widgets/Combobox';
 const SignUp = () => {
     //TIPO VA A DECIR SI ES DOCTOR O CLIENTE
     //FALSE PARA CLIENTE TRUE PARA DOCTOR
+    const navigate = useNavigate();
     const [tipo, setTipo] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -74,6 +75,7 @@ const SignUp = () => {
                 console.log(credenciales);
                 writeUserData(credenciales.user.uid, name, email);
                 alert("Registrado con exito")
+                navigate('/');
             }).catch((error) => {
                 alert(error)
                 console.log(error);
