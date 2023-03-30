@@ -1,6 +1,7 @@
 //Agendar cita
 import React from 'react'
-
+import back from '../../assets/back.png'
+import next from '../../assets/001-next.png'
 import { Menu, Transition } from '@headlessui/react'
 import {
   add,
@@ -81,14 +82,14 @@ export default function Calendar() {
                 onClick={previousMonth}
                 className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Previous month</span>
-                <img className='' src="assets\002-back.png" alt='anterior'/>
+                <img className='' src={back} alt='anterior'/>
               </button>
               <button
                 onClick={nextMonth}
                 type="button"
                 className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Next month</span>
-                <img className='' src="assets\001-next.png" alt='siguiente'/>
+                <img className='' src={next} alt='siguiente'/>
               </button>
             </div>
             <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-center text-gray-500">

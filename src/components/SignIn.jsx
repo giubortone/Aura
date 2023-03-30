@@ -7,10 +7,10 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const [user, setUser] = useState({});
 
-    onAuthStateChanged(auth, (currentUser) => {
+    /*onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
         console.log(user);
-    });
+    });*/
 
     const signIn = (e) => {
         console.log(email + ' and ' + password)
@@ -119,7 +119,7 @@ const SignIn = () => {
                         Confirmar
                     </button>
                     <br></br>
-                    <p>{user.name}</p>
+                    
                 </div>
             </form>
 
