@@ -1,4 +1,5 @@
 //NavBar
+import luxi from '../assets/luxi.png'
 
 function NavBarr() {
   return (
@@ -8,7 +9,7 @@ function NavBarr() {
         <h6
           class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
           <a href="/">
-          <img className='' src="assets\Luxi-Hosting-Logo.png" alt='logo'/>
+          <img className='' src={luxi} alt='logo'/>
           </a>
           Aura
           
