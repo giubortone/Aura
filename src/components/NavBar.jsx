@@ -8,7 +8,7 @@ function NavBarr() {
         <h6
           class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
           <a href="/">
-          <img className='' src="src\assets\Luxi-Hosting-Logo.png" alt='logo'/>
+          <img className='' src="assets\Luxi-Hosting-Logo.png" alt='logo'/>
           </a>
           Aura
           

@@ -6,7 +6,7 @@ export default function Doctorprofile() {
       <React.Fragment>
  <div className='flex justify items-center'>
     <div>
-        <img  className='h-80 ml-4' src="src\assets\doctor 1.png" alt="foto_perfil" />
+        <img  className='h-80 ml-4' src="assets\doctor 1.png" alt="foto_perfil" />
     </div>
 
 

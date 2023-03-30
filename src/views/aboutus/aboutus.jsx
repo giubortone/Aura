@@ -13,8 +13,8 @@ export default function Aboutus() {
             </div>
 
         <div class="grid grid-cols-2 gap-4 mt-8">
-            <img class="w-full rounded-lg" src="src\assets\tipos-de-psicologos.jpg" alt="office content 1"/>
-            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="src\assets\Depositphotos_89607222_m-2015.jpg-768x512.jpeg" alt="office content 2"/>
+            <img class="w-full rounded-lg" src="assets\tipos-de-psicologos.jpg" alt="office content 1"/>
+            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="assets\Depositphotos_89607222_m-2015.jpg-768x512.jpeg" alt="office content 2"/>
         </div>
 </section>
   </React.Fragment>
