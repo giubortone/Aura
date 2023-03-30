@@ -19,7 +19,6 @@ const Lista = () => {
     });
 
     const [data, setData] = useState([]);
-    const [nombreDoctor, setNombreDoctor] = useState('');
     const [dataFiltrada, setDataFiltrada] = useState([]);
     const [filtroEspecialidad, setFiltroEspecialidad] = useState('');
     const [especialidades, setEspecialidades] = useState([]);
@@ -29,7 +28,7 @@ const Lista = () => {
         get(query(ref(db, 'citas/'), orderByChild('id_usuario'), equalTo(user.uid))).then((snapshot) => {
             let records = [];
             if (snapshot.exists()) {
-                4
+
                 console.log(snapshot.val());
                 snapshot.forEach((citasSnapshot) => {
                     let keyName = citasSnapshot.key;
@@ -45,42 +44,7 @@ const Lista = () => {
             console.error(error);
         });
     }
-    if (especialidades.length == 0) getEspecialidad();
-    function getEspecialidad() {
-        const db = getDatabase();
-        //const dbRef = ref(getDatabase());
-        get(query(ref(db, 'especialidades/'), orderByKey())).then((snapshot) => {
-            let records = [];
-            records.push({ id: null, name: 'Todas' });
-            if (snapshot.exists()) {
-                snapshot.forEach(function (especialdadSnapshot) {
-                    let especialidad = especialdadSnapshot.val();
-                    var especialidadJson = {
-                        id: especialidad.id,
-                        name: especialidad.name
-                    };
-                    records.push(especialidadJson);
-                });
-                setEspecialidades(records);
-            } else {
-                console.log("No data available");
-            }
-        }).catch((error) => {
-            console.error(error);
-        });
-    }
-    function filtrarEspecialidad(value) {
-        setFiltroEspecialidad(value);
-        let records = [];
-        if (value.id != null) {
-            console.log(dataFiltrada);
-            records = data.filter(doc => doc.data.especialidad == value.id);
-        } else {
-            records = data;
-        }
-        setDataFiltrada(records);
-
-    }
+   
 
     return (
 
@@ -111,11 +75,11 @@ const Lista = () => {
                     </thead>
                     <tbody>
 
-                        {data.length > 0 && especialidades.length > 0 ? dataFiltrada.map((citaSnapshot, i) => (
+                        {data.length > 0 ? dataFiltrada.map((citaSnapshot, i) => (
 
                             <tr key={i} class="bg-purple-100 border-b dark:bg-gray-100 dark:border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-200">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    {citaSnapshot.data.id_doctor}
+                                    {citaSnapshot.data.nm_doctor}
                                 </th>
                                 <td class="px-6 py-4">
                                     {citaSnapshot.data.fecha}

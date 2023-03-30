@@ -80,16 +80,23 @@ export default function Calendar() {
       if (snapshot.exists()) {
         window.alert('Ya tienes un cita con este doctor este dia')
       } else {
-        setFirebase(ref(db, 'citas/' + user.uid + '_' + doctor.key + '_' + format(selectedDay, 'dd_MM_yyyy')), {
-          fecha: format(selectedDay, 'dd/MM/yyyy'),
-          id_usuario: user.uid,
-          id_doctor: doctor.key
-        }).then(() => {
-          window.alert('Cita agendada correctamente')
-          navigate('/search')
-        }).catch((error) => {
-          window.alert('Ya tienes un cita con este doctor este dia')
-          console.log(error);
+        get(query(ref(db, '/usuarios/clientes/' + user.uid))).then((snapshotCliente) => {
+          setFirebase(ref(db, 'citas/' + user.uid + '_' + doctor.key + '_' + format(selectedDay, 'dd_MM_yyyy')), {
+            fecha: format(selectedDay, 'dd/MM/yyyy'),
+            id_usuario: user.uid,
+            nm_usuario: snapshotCliente.val().username,
+            nm_doctor: doctor.data.username,
+            id_doctor: doctor.key
+          }).then(() => {
+            window.alert('Cita agendada correctamente')
+            navigate('/citas')
+          }).catch((error) => {
+            window.alert('Ya tienes un cita con este doctor este dia')
+            console.log(error);
+          });
+        }).catch((err) => {
+          console.log('----------')
+          console.log(err);
         });
       }
     }).catch((error) => {

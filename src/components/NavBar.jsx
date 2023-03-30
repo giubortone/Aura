@@ -46,6 +46,11 @@ const NavBarr = () => {
                 <a href="./search" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Doctores</a>
               </li>
               : null}
+              {user ?
+              <li>
+                <a href="./citas" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Citas</a>
+              </li>
+              : null}
             {!user ?
               <li>
                 <a href="./register" class="block py-2 pl-3 pr-4 text-purple-900 bg-blue-700 rounded md:bg-transparent md:text-purple-900 md:p-0 dark:bg-blue-600 md:dark:bg-transparent">Registrarse</a>
