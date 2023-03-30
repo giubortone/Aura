@@ -1,9 +1,12 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
+
 import { auth } from '../firebase';
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, get, query, orderByKey } from "firebase/database";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Combobox from 'react-widgets/Combobox';
+
 
 
 
@@ -16,18 +19,42 @@ const SignUp = () => {
     const [edad, setEdad] = useState('');
     const [password, setPassword] = useState('');
     const [especialidad, setEspecialidad] = useState('');
+    const [especialidades, setEspecialidades] = useState([]);
 
     const radios = [
         { name: 'Doctor', value: 'doctores' },
         { name: 'Cliente', value: 'clientes' },
     ];
+    if (especialidades.length == 0) getEspecialidad();
+    function getEspecialidad() {
+        const db = getDatabase();
+        //const dbRef = ref(getDatabase());
+        get(query(ref(db, 'especialidades/'), orderByKey())).then((snapshot) => {
+            let records = [];
+            if (snapshot.exists()) {
+                snapshot.forEach(function (especialdadSnapshot) {
+                    let especialidad = especialdadSnapshot.val();
+                    var especialidadJson = {
+                        id: especialidad.id,
+                        name: especialidad.name
+                    };
+                    records.push(especialidadJson);
+                });
+                setEspecialidades(records);
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
     function writeUserData(userId, name, email) {
         const db = getDatabase();
         if (tipo === 'clientes') {
             set(ref(db, 'usuarios/' + tipo + '/' + userId), {
                 username: name,
                 email: email,
-                edad:edad
+                edad: edad
             });
         } else if (tipo === 'doctores') {
             set(ref(db, 'usuarios/' + tipo + '/' + userId), {
@@ -40,14 +67,15 @@ const SignUp = () => {
         }
     }
     const signUp = (e) => {
-     //   console.log(name + ' and ' + email + ' and ' + password)
+        //   console.log(name + ' and ' + email + ' and ' + password)
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
             .then((credenciales) => {
                 console.log(credenciales);
-
                 writeUserData(credenciales.user.uid, name, email);
+                alert("Registrado con exito")
             }).catch((error) => {
+                alert(error)
                 console.log(error);
             })
     }
@@ -79,11 +107,11 @@ const SignUp = () => {
                     <input type="text" name="floating_name" id="floating_name" class="block col-span-2 py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="NOMBRE COMPLETO"
                         value={name} onChange={(e) => setName(e.target.value)} required />
                     <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-purple-900 dark:text-purple-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-900 peer-focus:dark:text-purple-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
-                
+
                     <input type="number" name="floating_edad" id="floating_edad" class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="EDAD"
                         value={edad} onChange={(e) => setEdad(e.target.value)} required />
                     <label for="floating_edad" class="peer-focus:font-medium absolute text-sm text-purple-900 dark:text-purple-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-900 peer-focus:dark:text-purple-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
-                
+
                 </div>
 
                 <div class="relative z-0 w-full mb-6 group">
@@ -109,12 +137,15 @@ const SignUp = () => {
 
                 {(tipo) === 'doctores' &&
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="text" name="floating_especialidad" id="floating_especialidad" class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:border-purple-600 dark:focus:border-purple-900 focus:outline-none focus:ring-0 focus:border-purple-900 peer" placeholder="ESPECIALIDAD"
-                            value={especialidad} onChange={(e) => setEspecialidad(e.target.value)} required />
-                        <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-purple-900 dark:text-purple-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-900 peer-focus:dark:text-purple-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+                        <Combobox
+                            data={especialidades}
+                            value={especialidades.id}
+                            textField='name'
+                            onChange={value => setEspecialidad(value.id)}
+                        />
                     </div>}
-                
-                            
+
+
 
                 <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                     <p className="mx-4 mb-0 text-center font-semibold text-neutral-300">

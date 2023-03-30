@@ -7,7 +7,7 @@ export default function Card({data}) {
                 <div className='border-2 rounded-lg w-full h-full border-black px-2 y '>
                     <div className='flex justify-center'>
                         <div className='flex justify-center'>
-                             <img  className= "w-16 h-16"src="src\assets\Ellipse 13.png" alt="img7" />
+                             <img  className= "w-16 h-16"src="assets\Ellipse 13.png" alt="img7" />
                              <div className='px-8'>
                                 <h1>{data.name}</h1>
                                 <p>{data.date}</p>

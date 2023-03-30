@@ -7,7 +7,7 @@ import StripeContainer from '../../components/StripeContainer'
             <div className='flex justify-between items-center'>
                 
                 <div className='flex justify-between items-start w-full'>    
-                    <img className='z-0' src='src\assets\Rectangle 1.png' alt='fondo morado'/>
+                    <img className='z-0' src="assets\Rectangle 1.png" alt='fondo morado'/>
                 </div>
 
                 

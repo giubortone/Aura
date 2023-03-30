@@ -50,7 +50,7 @@ const Footer = () => {
         <div class="ml-4">
           <h6
             class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-            <img className='' src="src\assets\Luxi-Hosting-Logo.png" alt='logo'/>
+            <img className='' src="assets\Luxi-Hosting-Logo.png" alt='logo'/>
             Aura
           </h6>
         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
             Nosotros
           </h6>
           <p class="mb-4 flex items-center justify-center md:justify-start">
-            <a href="#!" class="text-neutral-600 dark:text-purple-900"
+            <a href="/aboutus" class="text-neutral-600 dark:text-purple-900"
               >Nosotros</a>
           </p>
         </div>

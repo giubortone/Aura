@@ -12,10 +12,10 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((credenciales)=>{
             console.log(credenciales);
-            alert("Bienvenido")
+            window.alert("Bienvenido")
         }).catch((error)=>{
             console.log(error);
-            Alert("Alguno de los datos ingresados es inválido")
+            window.alert(error)
         })
     }
     return (

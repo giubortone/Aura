@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { getDatabase, ref, get, child, query, limitToLast, orderByKey, equalTo, orderByChild } from "firebase/database";
-import Dropdown from 'react-bootstrap/Dropdown';
 import Combobox from 'react-widgets/Combobox';
 import "react-widgets/styles.css";
 
@@ -133,7 +132,7 @@ const Lista = () => {
                     </thead>
                     <tbody>
 
-                        {data.length > 0 ? dataFiltrada.map((doctorSnapshot, i) => (
+                        {data.length > 0 && especialidades.length > 0 ? dataFiltrada.map((doctorSnapshot, i) => (
 
                             <tr key={i} class="bg-purple-100 border-b dark:bg-gray-100 dark:border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-200">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
