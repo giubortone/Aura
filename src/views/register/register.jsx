@@ -1,5 +1,6 @@
 import React from 'react'
 import SignUp from '../../components/SignUp'
+import photoregister from '../../assets/photo-register1.png'
 
  export default function Register() {
     return(
@@ -25,7 +26,7 @@ import SignUp from '../../components/SignUp'
                     <h1 className='text-3xl mb-4 font-bold text-purple-900'>“Para y date una oportunidad a ti mismo”</h1>
                     <h3 className='text-xl mb-4 font-bold text-gray-600'>~Aaron Beck</h3>
                     <br></br>
-                    <img className='rounded-lg' src="assets\photo-register1.png" alt='foto registro'/>
+                    <img className='rounded-lg' src={photoregister} alt='foto registro'/>
                     <br></br>
                 </div>
             </div>

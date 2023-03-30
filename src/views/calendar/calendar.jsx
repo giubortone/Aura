@@ -21,9 +21,25 @@ import {
   startOfToday,
 } from 'date-fns'
 import { Fragment, useState } from 'react'
-import { setDoc } from '@firebase/firestore';
+import foto from '../../assets/doctor 1.png';
 
-
+const meetings = [
+  {
+    id: 1,
+    name: 'Isabela Espinoza',
+    imageUrl:
+      {foto},
+    startDatetime: '2023-03-30T13:00',
+    endDatetime: '2023-03-30T14:30',
+  },
+  {
+    id: 2,
+    name: 'Daniel Mijares',
+    imageUrl: {foto},
+      startDatetime: '2023-03-30T11:00',
+      endDatetime: '2023-03-30T12:30',
+  },
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -175,6 +191,25 @@ export default function Calendar() {
               </ol>
             </section>
           </div>
+          <section className="mt-12 md:mt-0 md:pl-14">
+            <h2 className="font-semibold text-gray-900">
+              Agendar cita para {' '}
+              <time dateTime={format(selectedDay, 'yyyy-MM-dd')}>
+                {format(selectedDay, 'MMM dd, yyy')}
+              </time>
+            </h2>
+            <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
+              {selectedDayMeetings.length > 0 ? (
+                selectedDayMeetings.map((meeting) => (
+                  <Meeting meeting={meeting} key={meeting.id} 
+                  /> 
+                  
+                ))
+              ) : (
+                <p>No hay citas agendadas para hoy.</p>
+              )}
+            </ol>
+          </section>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import photoregisterdr from '../../assets/registerdr.png'
 
  export default function Registerdr() {
     return(
@@ -6,9 +7,9 @@ import React from 'react'
 
             <dev className='flex justify-between items-center'>
                 <dev>
-                    <section class="ml-96">
+                    <section class="ml-60">
                         <div class="items-center justify-center px-6 py-8">
-                           <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:border-purple-900">
+                           <div class="w-max bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:border-purple-900">
                                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                                    <h1 class="text-center text-xl font-bold leading-tight tracking-tight text-purple-900 md:text-2xl dark:text-purple-900">
                                        Crea tu cuenta
@@ -125,11 +126,11 @@ import React from 'react'
                     </section>
                 </dev>
 
-                <dev className='mt-16 text-center mr-96'>
+                <dev className='mt-16 text-center mr-60'>
                     <h1 className='text-3xl mb-4 font-bold text-purple-900'>“Tú eres aquello que haces, no aquello que dices que harás”</h1>
                     <h3 className='text-xl mb-4 font-bold text-gray-600'>~C.G. Jung</h3>
                     <br></br>
-                    <img className='rounded-lg ml-32' src="assets\registerdr.png" alt='foto registro'/>
+                    <img className='rounded-lg' src={photoregisterdr} alt='foto registro'/>
                     <br></br>
                 </dev>
             </dev>
