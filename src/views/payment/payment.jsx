@@ -1,5 +1,6 @@
 import React from 'react'
 import StripeContainer from '../../components/StripeContainer'
+import fondo from '../../assets/Rectangle 1.png'
 
  export default function Payment() {
     return(
@@ -7,7 +8,7 @@ import StripeContainer from '../../components/StripeContainer'
             <div className='flex justify-between items-center'>
                 
                 <div className='flex justify-between items-start w-full'>    
-                    <img className='z-0' src="assets\Rectangle 1.png" alt='fondo morado'/>
+                    <img className='z-0' src={fondo} alt='fondo morado'/>
                 </div>
 
                 
