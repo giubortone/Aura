@@ -16,6 +16,7 @@ import Userprofile from "../views/UserProfile/userprofile";
 import Feedback from "../views/feedback/feedback";
 import Calendar from "../views/calendar/calendar";
 import Aboutus from "../views/aboutus/aboutus";
+import Nodisponible from "../views/nodisponible/nodispinible";
 
 export const router = createBrowserRouter([
     {
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
     {
         path: "/aboutus",
         element: <Aboutus/>
+    }, 
+    {
+        path: "/nodisponible",
+        element: <Nodisponible/>
     }
 ])
 

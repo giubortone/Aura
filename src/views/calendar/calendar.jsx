@@ -18,21 +18,21 @@ import {
   startOfToday,
 } from 'date-fns'
 import { Fragment, useState } from 'react'
+import foto from '../../assets/doctor 1.png';
 
 const meetings = [
   {
     id: 1,
     name: 'Isabela Espinoza',
     imageUrl:
-      'https://thumbs.dreamstime.com/b/mujer-avatar-con-la-cara-sonriente-personaje-de-dibujos-animados-femenino-chica-joven-feliz-icono-hermoso-gente-120322126.jpg',
+      {foto},
     startDatetime: '2023-03-30T13:00',
     endDatetime: '2023-03-30T14:30',
   },
   {
     id: 2,
     name: 'Daniel Mijares',
-    imageUrl:
-      'https://thumbs.dreamstime.com/b/hombres-avatar-con-emociones-cara-emocionada-plano-dise%C3%B1o-vector-ilustraci%C3%B3n-174305332.jpg',
+    imageUrl: {foto},
       startDatetime: '2023-03-30T11:00',
       endDatetime: '2023-03-30T12:30',
   },
@@ -162,7 +162,9 @@ export default function Calendar() {
             <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
               {selectedDayMeetings.length > 0 ? (
                 selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} />
+                  <Meeting meeting={meeting} key={meeting.id} 
+                  /> 
+                  
                 ))
               ) : (
                 <p>No hay citas agendadas para hoy.</p>
