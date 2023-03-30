@@ -7,10 +7,11 @@
   "scripts": {
     "start": "node ./server/pagos.jsx",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp -r src/assets dist/",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.5",
     "@headlessui/react": "^1.7.13",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.0",
